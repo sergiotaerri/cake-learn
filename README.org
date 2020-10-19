@@ -72,9 +72,24 @@
      Encapsulam *lógica* reutilizável, ajundando a fazer formulários, funcionalidades AJAX etc.
      
 ** Scaffolding
-   Não entendi direito.
+   O scaffold analiza as tabelas de sua base de dados e cria uma listas padronizadas com botões de inserção, edição e exclusão, formulários padronizados para edição e visões padronizadas para visualização de um único registro da base de dados.
+
+   O intuito do scaffold é ser utilizado para acelerar etapas iniciais do projeto, onde há uma modelagem prematura e sujeita a mudança.
+
+   *Para realizar o scaffolding* só é necessário um model e seu controller. Uma vez que você tiver definido a variável $scaffold em seu controller, já estará preparado e funcionando. /Criar métodos em controllers que possuam definições de scaffold pode causar resultados indesejados/.
+
+   O scaffold tem conhecimento sobre as associações de models, se o seu model possuir referências a outros, você vera os IDs relacionads na listagem.
+
+   Em  um scaffolding normal você pode substituir métodos individuais e substituí-los você mesmo. Estilo "overriding".
+
    [[Referência]]
    
+*** Personalizando views do scaffold
+A utilização de templates  não é recomendada em produção, sendo colocadas em:
+
+=/app/views/scaffolds/index.ctp=.
+
+
 ** Geração de Codigo
    Aposto que gerou a explicação também.
    [[https://book.cakephp.org/1.3/en/The-Manual/Core-Console-Applications/Code-Generation-with-Bake.html][Referência]]
@@ -97,5 +112,5 @@
 * Cake-Blog
   - [[https://book.cakephp.org/1.3/en/The-Manual/Common-Tasks-With-CakePHP.html][Duvida 1]]
   - Duvida 2: Editor para ajudar com o namespacing implícito do Cake e a versão do php, o emacs tem o o cakephp.el que ainda não tentei, mas não li nada sobre o namespacing
-  - [[https://book.cakephp.org/1.3/en/The-Manual/Tutorials-Examples/Blog.html#adding-posts][Duvida 2]] : setFlash() ficou confuso
+  - [[https://book.cakephp.org/1.3/en/The-Manual/Tutorials-Examples/Blog.html#adding-posts][Duvida 3]] : setFlash() ficou confuso
 * Cake-Acl
