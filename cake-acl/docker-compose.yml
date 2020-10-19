@@ -1,0 +1,46 @@
+version: '3'
+
+services:
+  app:
+    build:
+      context: .
+    ports:
+      - "82:80"
+    volumes:
+      - ./:/app
+    container_name: app-cake
+    restart: unless-stopped
+    tty: true
+    working_dir: /app
+    networks:
+      - app-network
+
+  #MySQL Service
+  db:
+    image: mysql:5.7.22
+    container_name: db-cake
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: cakeblog
+      MYSQL_ROOT_PASSWORD: 1234
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql
+    volumes:
+      - dbdata:/var/lib/mysql
+      # - ./mysql/my.cnf:/etc/mysql/my.cnf
+    networks:
+      - app-network
+
+
+
+networks:
+  app-network:
+    driver: bridge
+
+#Volumes
+volumes:
+  dbdata:
+    driver: local
