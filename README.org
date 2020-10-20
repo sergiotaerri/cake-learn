@@ -57,6 +57,12 @@
 ** DataSources
    Em suma, é absastração entre o modelo e a fonte de dados (geralmente o banco de dados), porém é possivel criar datasources customizaveis para poder configurar uma nova fonte de dados (i.e. uma API externa [[https://book.cakephp.org/1.3/en/The-Manual/Developing-with-CakePHP/DataSources.html][Exemplo/Fonte]]). Plugins podem adicionar Datasources.
 
+** Schemas
+   - =cake schema=
+   Cake schema permite gerar schemas a partir do banco de dados conectado a aplicação.
+
+   Arquivos Schema são apenas classes php que ficam em =config/schema=
+
 ** Views
    [[https://book.cakephp.org/1.3/en/The-Manual/Developing-with-CakePHP/Views.html][Fonte]]
 *** São implementadas em php, sob a extensão .ctp
@@ -114,3 +120,8 @@ A utilização de templates  não é recomendada em produção, sendo colocadas 
   - Duvida 2: Editor para ajudar com o namespacing implícito do Cake e a versão do php, o emacs tem o o cakephp.el que ainda não tentei, mas não li nada sobre o namespacing
   - [[https://book.cakephp.org/1.3/en/The-Manual/Tutorials-Examples/Blog.html#adding-posts][Duvida 3]] : setFlash() ficou confuso
 * Cake-Acl
+* Cake bake CLI
+** Para criar um novo projeto rode
+   =cake bake <proj name>=
+** Para acessar o cake-bake-cli dentro de um proj
+   =cake bake=
